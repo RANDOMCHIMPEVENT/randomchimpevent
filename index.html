@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html style="background:black">
+<head>
+  <p style="text-align:center;font-size:100px;margin-top:0px; margin-bottom: 0px; font-family: Impact;color:red;">IT'S NOT RANDOM ANYMORE</p>
+<img src="chimp.PNG" style="display:block; margin-left:auto;margin-right:auto;width:50%">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<p id="chimptimer" style="text-align:center;font-size:120px;margin-top:0px;font-family: Impact;color:red;"></p>
+<script>
+var countDownDate = new Date("Dec 3, 2020 15:37:25").getTime();
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+  document.getElementById("chimptimer").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24)) 
+  + "D " + Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) + "H "
+  + Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)) + "M " + 
+  Math.floor((distance % (1000 * 60)) / 1000) + "S ";
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("chimptimer").innerHTML = "THE RANDOM CHIMP EVENT HAS BEGUN.";
+  }
+}, 1000);
+</script>
+</body>
+</html>
